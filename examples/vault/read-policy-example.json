@@ -1,0 +1,7 @@
+{
+  "path": {
+    "homelab/data/example/myapp_credentials": {
+      "capabilities": ["read"]
+    }
+  }
+}   

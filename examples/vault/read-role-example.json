@@ -1,0 +1,6 @@
+{
+  "policies": ["read-policy-example"],
+  "bound_service_account_names": ["eos-vault-sa"],
+  "bound_service_account_namespaces": ["myapp"],
+  "token_ttl": "1h"
+}

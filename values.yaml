@@ -1,0 +1,38 @@
+# Optional dependency for installing external-secrets chart
+external-secrets:
+  enabled: false
+
+
+# RBAC section: defaults provided for easy onboarding. Override only if needed.
+rbac:
+  serviceAccountName: vault-sa
+  tokenSecretName: vault-sa-token
+  roleName: vault-reader
+  roleBindingName: vault-reader-binding
+  clusterRoleBindingName: vault-tokenreview-binding
+
+secretStore:
+  name: vault-backend
+  vault:
+    server: "https://vault.myinstance.com"
+    path: "homelab"
+    role: "my-app-vault-role"
+    mountPath: "test-cluster"
+
+externalSecretsDefaults:
+  refreshInterval: 1h
+  creationPolicy: Owner
+  secretStoreRef: vault-backend
+
+externalSecrets:
+  - name: my-app-secret
+    namespace: default
+    # Optionally override any of the defaults below per secret:
+    # refreshInterval: 30m
+    # creationPolicy: Merge
+    # secretStoreRef: another-store
+    targetName: my-app-secret
+    data:
+      - secretKey: my-key
+        remoteKey: path/to/vault/secret
+        remoteProperty: my-key
