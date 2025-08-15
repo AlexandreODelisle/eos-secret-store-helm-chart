@@ -1,0 +1,12 @@
+apiVersion: v2
+description: Handling SecretStore or ClusterSecretStore for Vault with EOS
+name: eos-secret-store
+type: application
+version: 0.0.1
+icon: https://raw.githubusercontent.com/helm/helm/main/assets/images/helm.svg
+
+dependencies:
+  - name: external-secrets
+    version: "0.9.19"
+    repository: "https://charts.external-secrets.io"
+    condition: external-secrets.enabled
