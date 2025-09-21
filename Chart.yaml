@@ -2,7 +2,7 @@ apiVersion: v2
 description: Handling SecretStore or ClusterSecretStore for Vault with EOS
 name: eos-secret-store
 type: application
-version: 0.0.1
+version: 0.0.2
 icon: https://raw.githubusercontent.com/helm/helm/main/assets/images/helm.svg
 
 dependencies:
