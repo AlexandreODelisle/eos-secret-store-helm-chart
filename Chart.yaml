@@ -7,6 +7,6 @@ icon: https://raw.githubusercontent.com/helm/helm/main/assets/images/helm.svg
 
 dependencies:
   - name: external-secrets
-    version: 0.20.2
+    version: 0.20.3
     repository: "https://charts.external-secrets.io"
     condition: external-secrets.enabled
